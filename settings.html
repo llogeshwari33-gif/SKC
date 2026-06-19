@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings - SKC OMS</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<aside class="sidebar">
+
+<div class="logo">
+<h2>SKC OMS</h2>
+<p>Settings</p>
+</div>
+
+</aside>
+
+<main class="content">
+
+<header class="topbar">
+
+<h2>Settings</h2>
+
+<div class="top-right">
+<span id="userName"></span>
+<button onclick="logout()">Logout</button>
+</div>
+
+</header>
+
+<section class="panel">
+
+<h3>Change Password</h3>
+
+<br>
+
+<form id="passwordForm">
+
+<input
+type="password"
+id="newPassword"
+placeholder="New Password"
+required
+style="
+width:100%;
+padding:12px;
+margin-bottom:10px;"
+>
+
+<button type="submit">
+Update Password
+</button>
+
+</form>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="../js/supabase.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/settings.js"></script>
+
+</body>
+</html>

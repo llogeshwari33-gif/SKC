@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports - SKC OMS</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<aside class="sidebar">
+
+<div class="logo">
+<h2>SKC OMS</h2>
+<p>Reports Center</p>
+</div>
+
+<ul class="menu">
+<li onclick="location.href='owner-dashboard.html'">Dashboard</li>
+<li class="active">Reports</li>
+</ul>
+
+</aside>
+
+<main class="content">
+
+<header class="topbar">
+
+<div class="top-left">
+<h2>Reports</h2>
+</div>
+
+<div class="top-right">
+<span id="userName"></span>
+<button onclick="logout()">Logout</button>
+</div>
+
+</header>
+
+<section class="cards">
+
+<div class="card">
+<h4>Total Employees</h4>
+<h2 id="employeeCount">0</h2>
+</div>
+
+<div class="card">
+<h4>Total Tasks</h4>
+<h2 id="taskCount">0</h2>
+</div>
+
+<div class="card">
+<h4>Completed Tasks</h4>
+<h2 id="completedTaskCount">0</h2>
+</div>
+
+<div class="card">
+<h4>Attendance Records</h4>
+<h2 id="attendanceCount">0</h2>
+</div>
+
+</section>
+
+<br>
+
+<section class="panel">
+
+<h3>Attendance Report</h3>
+
+<br>
+
+<table width="100%">
+<thead>
+<tr>
+<th align="left">Employee</th>
+<th align="left">Date</th>
+<th align="left">Status</th>
+</tr>
+</thead>
+
+<tbody id="attendanceReportTable">
+<tr>
+<td colspan="3">Loading...</td>
+</tr>
+</tbody>
+
+</table>
+
+</section>
+
+<br>
+
+<section class="panel">
+
+<h3>Task Report</h3>
+
+<br>
+
+<table width="100%">
+<thead>
+<tr>
+<th align="left">Task</th>
+<th align="left">Priority</th>
+<th align="left">Status</th>
+</tr>
+</thead>
+
+<tbody id="taskReportTable">
+<tr>
+<td colspan="3">Loading...</td>
+</tr>
+</tbody>
+
+</table>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="../js/supabase.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/reports.js"></script>
+
+</body>
+</html>

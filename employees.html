@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees - SKC OMS</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>SKC OMS</h2>
+            <p>Employee Management</p>
+        </div>
+
+        <ul class="menu">
+            <li onclick="location.href='owner-dashboard.html'">Dashboard</li>
+            <li class="active">Employees</li>
+            <li onclick="location.href='attendance.html'">Attendance</li>
+            <li onclick="location.href='tasks.html'">Tasks</li>
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <div class="top-left">
+                <h2>Employee Management</h2>
+            </div>
+
+            <div class="top-right">
+                <span id="userName"></span>
+
+                <button onclick="logout()">
+                    Logout
+                </button>
+            </div>
+
+        </header>
+
+        <section class="panel">
+
+            <h3>Add Employee</h3>
+
+            <br>
+
+            <form id="employeeForm">
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Full Name"
+                    required
+                    style="width:100%;padding:12px;margin-bottom:10px;"
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    required
+                    style="width:100%;padding:12px;margin-bottom:10px;"
+                >
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Temporary Password"
+                    required
+                    style="width:100%;padding:12px;margin-bottom:10px;"
+                >
+
+                <select
+                    id="role"
+                    required
+                    style="width:100%;padding:12px;margin-bottom:10px;"
+                >
+                    <option value="">
+                        Select Role
+                    </option>
+
+                    <option value="manager">
+                        Manager
+                    </option>
+
+                    <option value="supervisor">
+                        Supervisor
+                    </option>
+
+                </select>
+
+                <input
+                    type="text"
+                    id="phone"
+                    placeholder="Phone Number"
+                    style="width:100%;padding:12px;margin-bottom:10px;"
+                >
+
+                <button type="submit">
+                    Create Employee
+                </button>
+
+            </form>
+
+        </section>
+
+        <br>
+
+        <section class="panel">
+
+            <h3>Employee List</h3>
+
+            <br>
+
+            <table width="100%">
+
+                <thead>
+
+                <tr>
+                    <th align="left">Name</th>
+                    <th align="left">Email</th>
+                    <th align="left">Role</th>
+                    <th align="left">Status</th>
+                    <th align="left">Action</th>
+                </tr>
+
+                </thead>
+
+                <tbody id="employeeTable">
+
+                <tr>
+                    <td colspan="5">
+                        Loading Employees...
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/supabase.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/employees.js"></script>
+
+</body>
+</html>

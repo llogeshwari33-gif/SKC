@@ -1,0 +1,199 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+body{
+background:#f1f5f9;
+color:#1e293b;
+}
+
+.dashboard{
+display:flex;
+min-height:100vh;
+}
+
+.sidebar{
+width:260px;
+background:#0f172a;
+color:white;
+padding:20px;
+position:fixed;
+height:100vh;
+overflow-y:auto;
+}
+
+.logo{
+padding-bottom:20px;
+border-bottom:1px solid rgba(255,255,255,.1);
+margin-bottom:20px;
+}
+
+.logo h2{
+font-size:24px;
+font-weight:700;
+}
+
+.logo p{
+font-size:13px;
+opacity:.7;
+margin-top:4px;
+}
+
+.menu{
+list-style:none;
+}
+
+.menu li{
+padding:14px 16px;
+margin-bottom:8px;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.menu li:hover{
+background:#1e293b;
+}
+
+.menu .active{
+background:#2563eb;
+}
+
+.content{
+margin-left:260px;
+padding:25px;
+width:100%;
+}
+
+.topbar{
+background:white;
+padding:18px 25px;
+border-radius:14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+margin-bottom:25px;
+}
+
+.top-right{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.card h4{
+font-size:14px;
+color:#64748b;
+margin-bottom:10px;
+}
+
+.card h2{
+font-size:32px;
+font-weight:700;
+}
+
+.panel{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+table{
+border-collapse:collapse;
+}
+
+table th{
+padding:14px;
+background:#f8fafc;
+border-bottom:2px solid #e2e8f0;
+}
+
+table td{
+padding:14px;
+border-bottom:1px solid #e2e8f0;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+border:1px solid #cbd5e1;
+border-radius:10px;
+outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#2563eb;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.dashboard-section{
+margin-top:20px;
+}
+
+.status-pending{
+color:#dc2626;
+font-weight:600;
+}
+
+.status-progress{
+color:#d97706;
+font-weight:600;
+}
+
+.status-completed{
+color:#16a34a;
+font-weight:600;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+}
+
+.content{
+margin-left:0;
+}
+
+.dashboard{
+flex-direction:column;
+}
+
+}

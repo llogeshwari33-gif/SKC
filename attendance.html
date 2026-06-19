@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management - SKC OMS</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>SKC OMS</h2>
+            <p>Attendance Management</p>
+        </div>
+
+        <ul class="menu">
+            <li onclick="location.href='owner-dashboard.html'">
+                Dashboard
+            </li>
+
+            <li onclick="location.href='employees.html'">
+                Employees
+            </li>
+
+            <li class="active">
+                Attendance
+            </li>
+
+            <li onclick="location.href='tasks.html'">
+                Tasks
+            </li>
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <div class="top-left">
+                <h2>Attendance Management</h2>
+            </div>
+
+            <div class="top-right">
+
+                <span id="userName"></span>
+
+                <button onclick="logout()">
+                    Logout
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="cards">
+
+            <div class="card">
+                <h4>Total Present</h4>
+                <h2 id="presentCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Total Absent</h4>
+                <h2 id="absentCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Check In Today</h4>
+                <h2 id="checkInCount">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Check Out Today</h4>
+                <h2 id="checkOutCount">0</h2>
+            </div>
+
+        </section>
+
+        <br>
+
+        <section class="panel">
+
+            <h3>Attendance Records</h3>
+
+            <br>
+
+            <input
+                type="date"
+                id="attendanceDate"
+                style="
+                padding:10px;
+                margin-bottom:15px;"
+            >
+
+            <button onclick="filterAttendance()">
+                Search
+            </button>
+
+            <br><br>
+
+            <table width="100%">
+
+                <thead>
+
+                <tr>
+                    <th align="left">Employee</th>
+                    <th align="left">Date</th>
+                    <th align="left">Check In</th>
+                    <th align="left">Check Out</th>
+                    <th align="left">Status</th>
+                </tr>
+
+                </thead>
+
+                <tbody id="attendanceTable">
+
+                <tr>
+                    <td colspan="5">
+                        Loading Attendance...
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/supabase.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/attendance.js"></script>
+
+</body>
+</html>

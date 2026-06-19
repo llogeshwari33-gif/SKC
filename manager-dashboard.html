@@ -1,0 +1,176 @@
+<!-- SKC/pages/manager-dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard - SKC OMS</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>SKC OMS</h2>
+            <p>Manager Panel</p>
+        </div>
+
+        <ul class="menu">
+            <li class="active">Dashboard</li>
+            <li>Attendance</li>
+            <li>Tasks</li>
+            <li>Reports</li>
+            <li>Notifications</li>
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <div class="top-left">
+                <h2>Manager Dashboard</h2>
+            </div>
+
+            <div class="top-right">
+                <span id="userName">Loading...</span>
+
+                <button onclick="logout()">
+                    Logout
+                </button>
+            </div>
+
+        </header>
+
+        <section class="cards">
+
+            <div class="card">
+                <h4>Team Members</h4>
+                <h2 id="teamMembers">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Present Today</h4>
+                <h2 id="presentToday">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Pending Tasks</h4>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Completed Tasks</h4>
+                <h2 id="completedTasks">0</h2>
+            </div>
+
+        </section>
+
+        <section class="dashboard-section">
+
+            <div class="panel">
+
+                <h3>Team Attendance</h3>
+
+                <table width="100%">
+
+                    <thead>
+
+                    <tr>
+                        <th align="left">Employee</th>
+                        <th align="left">Role</th>
+                        <th align="left">Check In</th>
+                        <th align="left">Status</th>
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="attendanceTable">
+
+                    <tr>
+                        <td colspan="4">
+                            Loading Attendance...
+                        </td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <section class="dashboard-section">
+
+            <div class="panel">
+
+                <h3>Assigned Tasks</h3>
+
+                <table width="100%">
+
+                    <thead>
+
+                    <tr>
+                        <th align="left">Task</th>
+                        <th align="left">Priority</th>
+                        <th align="left">Due Date</th>
+                        <th align="left">Status</th>
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="taskTable">
+
+                    <tr>
+                        <td colspan="4">
+                            Loading Tasks...
+                        </td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <section class="dashboard-section">
+
+            <div class="panel">
+
+                <h3>Recent Activity</h3>
+
+                <div id="activityContainer">
+                    Loading Activities...
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/supabase.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/manager.js"></script>
+
+</body>
+</html>

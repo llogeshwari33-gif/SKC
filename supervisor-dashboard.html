@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Dashboard - SKC OMS</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>SKC OMS</h2>
+            <p>Supervisor Panel</p>
+        </div>
+
+        <ul class="menu">
+            <li class="active">Dashboard</li>
+            <li>Attendance</li>
+            <li>My Tasks</li>
+            <li>Daily Reports</li>
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <div class="top-left">
+                <h2>Supervisor Dashboard</h2>
+            </div>
+
+            <div class="top-right">
+                <span id="userName">Loading...</span>
+
+                <button onclick="logout()">
+                    Logout
+                </button>
+            </div>
+
+        </header>
+
+        <section class="cards">
+
+            <div class="card">
+                <h4>My Tasks</h4>
+                <h2 id="myTasks">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Completed</h4>
+                <h2 id="completedTasks">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Pending</h4>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+
+            <div class="card">
+                <h4>Today's Status</h4>
+                <h2 id="attendanceStatus">--</h2>
+            </div>
+
+        </section>
+
+        <section class="dashboard-section">
+
+            <div class="panel">
+
+                <h3>Attendance</h3>
+
+                <br>
+
+                <button id="checkInBtn">
+                    Check In
+                </button>
+
+                <button id="checkOutBtn">
+                    Check Out
+                </button>
+
+                <br><br>
+
+                <p>
+                    Check In :
+                    <strong id="checkInTime">--</strong>
+                </p>
+
+                <p>
+                    Check Out :
+                    <strong id="checkOutTime">--</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <section class="dashboard-section">
+
+            <div class="panel">
+
+                <h3>My Tasks</h3>
+
+                <table width="100%">
+
+                    <thead>
+
+                    <tr>
+                        <th align="left">Task</th>
+                        <th align="left">Priority</th>
+                        <th align="left">Status</th>
+                        <th align="left">Action</th>
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="taskTable">
+
+                    <tr>
+                        <td colspan="4">
+                            Loading Tasks...
+                        </td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <section class="dashboard-section">
+
+            <div class="panel">
+
+                <h3>Daily Report</h3>
+
+                <textarea
+                    id="workDone"
+                    placeholder="Work Done Today"
+                    style="
+                    width:100%;
+                    height:120px;
+                    padding:10px;
+                    margin-bottom:10px;">
+                </textarea>
+
+                <textarea
+                    id="issues"
+                    placeholder="Issues / Problems"
+                    style="
+                    width:100%;
+                    height:100px;
+                    padding:10px;
+                    margin-bottom:10px;">
+                </textarea>
+
+                <button onclick="submitReport()">
+                    Submit Report
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/supabase.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/supervisor.js"></script>
+
+</body>
+</html>
